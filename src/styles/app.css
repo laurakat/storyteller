@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
+
+.app-main {
+  margin: 20px 50px;
+  font-size: 1.2em;
+  background-color: #f4eee2;
+  color: #2a2305;
+  font-family: 'Noto Serif JP', sans-serif;
+}
+
+.page {
+  padding: 40px 70px;
+  border: 1px solid #dbd8d1;
+  box-shadow: 3px 3px 3px #dbd8d1;
+}
+
+.page .text {
+  margin-bottom: 30px;
+}
+
+.page .image {
+  text-align: center;
+}
+
+.page .image img {
+  width: 100%;
+  max-width: 600px;
+}
+
+@media(max-width: 700px) {
+  .app-main {
+    font-size: 1em;
+  }
+
+  .page {
+    padding: 20px;
+  }
+
+  .page .text {
+    margin-bottom: 20px;
+  }
+}
