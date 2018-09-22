@@ -20,16 +20,19 @@ const reducer = (state = DEFAULT_STATE, action) => {
         .value()
 
     case 'LOAD_FIRST_PAGE_START':
+    case 'CHANGE_PAGE_START':
       return objectPathImmutable(state)
         .set('isLoading', true)
         .value()
 
     case 'LOAD_FIRST_PAGE_FAILURE':
+    case 'CHANGE_PAGE_FAILURE':
       return objectPathImmutable(state)
         .set('isLoading', false)
         .value()
 
     case 'LOAD_FIRST_PAGE_SUCCESS':
+    case 'CHANGE_PAGE_SUCCESS':
       return objectPathImmutable(state)
         .set('isLoading', false)
         .set('currentPage', action.payload.page)

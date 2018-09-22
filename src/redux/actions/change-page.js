@@ -1,23 +1,24 @@
 import { createApolloFetch } from 'apollo-fetch'
 
 import { API_URL } from '../../constants'
-import { getFirstPage } from '../../graphql'
+import { getPageById } from '../../graphql'
 
-export const loadFirstPage = () => async (dispatch, getState) => {
+export const changePage = pageId => async (dispatch, getState) => {
   try {
     dispatch({
-      type: 'LOAD_FIRST_PAGE_START'
+      type: 'CHANGE_PAGE_START'
     })
 
-    const query = getFirstPage
+    const query = getPageById
+    const variables = { id: pageId }
 
     const uri = API_URL
     const fetch = createApolloFetch({uri})
-    const response = await fetch({query})
+    const response = await fetch({ query, variables })
 
     if (response.errors) {
       dispatch({
-        type: 'LOAD_FIRST_PAGE_FAILURE',
+        type: 'CHANGE_PAGE_FAILURE',
         payload: response.errors
       })
 
@@ -25,15 +26,15 @@ export const loadFirstPage = () => async (dispatch, getState) => {
     }
 
     dispatch({
-      type: 'LOAD_FIRST_PAGE_SUCCESS',
+      type: 'CHANGE_PAGE_SUCCESS',
       payload: {
-        page: response.data.getFirstPage
+        page: response.data.getPageById
       }
     })
 
   } catch (error) {
     dispatch({
-      type: 'LOAD_FIRST_PAGE_FAILURE',
+      type: 'CHANGE_PAGE_FAILURE',
       payload: error
     })
   }

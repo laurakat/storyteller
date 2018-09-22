@@ -4,12 +4,16 @@ import { connect } from 'react-redux'
 
 import './styles/app.css';
 
-import { initBook } from './redux/actions'
+import {
+  initBook,
+  changePage
+} from './redux/actions'
 import Page from './components/page'
 
 class App extends Component {
   static propTypes = {
     initBook: PropTypes.func.isRequired,
+    changePage: PropTypes.func.isRequired,
     currentPage: PropTypes.object.isRequired
   }
 
@@ -18,10 +22,16 @@ class App extends Component {
   }
 
   render() {
+    const {
+      currentPage,
+      changePage
+    } = this.props
+
     return (
       <div className="app-main">
         <Page
-          currentPage={this.props.currentPage} />
+          currentPage={currentPage}
+          changePage={changePage} />
       </div>
     )
   }
@@ -37,7 +47,8 @@ const mapState = state => {
 
 const mapActions = (dispatch, ownProps) => {
   return {
-    initBook: () => dispatch(initBook())
+    initBook: () => dispatch(initBook()),
+    changePage: pageId => dispatch(changePage(pageId))
   }
 }
 
