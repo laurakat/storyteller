@@ -1,0 +1,29 @@
+.chapter-title-section {
+  text-align: center;
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chapter-title {
+  line-height: 1.8em;
+  border-bottom: 2px solid $page-text-color;
+}
+
+.border-left,
+.border-right {
+  width: 70px;
+}
+
+.border-right {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+
+.border-left {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
+
+@import './sizes'
+@import './colors'
+
+@import './page/page';
+
+.app-main {
+  margin: 20px 250px;
+  font-size: 1.3em;
+  background-color: $page-background-color;
+  color: $page-text-color;
+  font-family: 'Noto Serif JP', sans-serif;
+}
+
+@media(max-width: $screen-width-medium) {
+  .app-main {
+    font-size: 1.2em;
+    margin: 20px 100px;
+  }
+}
+
+@media(max-width: $screen-width-small) {
+  .app-main {
+    font-size: 1em;
+    margin: 10px 30px;
+  }
+}
