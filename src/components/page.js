@@ -14,11 +14,16 @@ class Page extends PureComponent {
 
     return (
       <div className="page">
-        <div className="text">
-          {currentPage.text}
+        <div className='chapter-title-section'>
+          <img className='border-left' src='images/corner-border.svg' />
+          <span className='chapter-title'>{currentPage.chapterTitle}</span>
+          <img className='border-right' src='images/corner-border.svg' />
         </div>
         <div className='image'>
           {currentPage.image && <img src={currentPage.image} />}
+        </div>
+        <div className="text">
+          {currentPage.text}
         </div>
         <div className='choice-buttons'>
           {currentPage.choices && currentPage.choices.map(choice => {
