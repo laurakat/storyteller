@@ -1,12 +1,12 @@
 import { loadFirstPage } from './load-first-page'
 
-export const initBook = () => async (dispatch, getState) => {
+export const initBook = bookId => async (dispatch, getState) => {
   try {
   	dispatch({
   		type: 'INIT_BOOK_START'
   	})
 
-    await dispatch(loadFirstPage())
+    await dispatch(loadFirstPage(bookId))
 
   	dispatch({
   		type: 'INIT_BOOK_SUCCESS'

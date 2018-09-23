@@ -1,5 +1,7 @@
-export default `query {
-  getFirstPage {
+export default `query (
+  $bookId: String!
+) {
+  getFirstPage(bookId: $bookId) {
     _id
     name
     chapterTitle
