@@ -1,13 +1,18 @@
-@import './chapter-title'
-@import './choices'
+@import './chapter-title';
+@import './choices';
 
 .page {
-  padding: 40px 70px;
+  padding: 30px 70px;
   border: 1px solid #dbd8d1;
   box-shadow: 3px 3px 3px #dbd8d1;
+  background-image: url('http://www.psd-dude.com/tutorials/resources-images/old-vintage-paper-textures-for-designers/grunge-paper-background-texture.jpg');
+  background-size: cover;
 
   .text {
     margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fdfaf5;
+    border-radius: 3px;
   }
 
   .image {
@@ -16,7 +21,7 @@
 
     img {
       width: 100%;
-      max-width: 600px;
+      max-width: 550px;
     }
   }
 }

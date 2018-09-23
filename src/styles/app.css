@@ -1,40 +1,54 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Serif+JP");
+.chapter-title-section {
+  text-align: center;
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.chapter-title {
+  line-height: 1.8em;
+  border-bottom: 2px solid #2a2305; }
+
+.border-left,
+.border-right {
+  width: 70px; }
+
+.border-right {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1); }
+
+.border-left {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); }
+
+.choice-buttons {
+  text-align: center; }
+
+.choice-buttons button {
+  margin: 10px;
+  color: #fff;
+  min-width: 340px; }
+
 .page {
-  padding: 40px 70px;
+  padding: 30px 70px;
   border: 1px solid #dbd8d1;
-  box-shadow: 3px 3px 3px #dbd8d1; }
-  .page .chapter-title-section {
-    text-align: center;
-    font-size: 1.6em;
-    margin-bottom: 20px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; }
-  .page .chapter-title {
-    line-height: 1.8em;
-    border-bottom: 2px solid #2a2305; }
-  .page .border-left,
-  .page .border-right {
-    width: 70px; }
-  .page .border-right {
-    -webkit-transform: scaleY(-1);
-    transform: scaleY(-1); }
-  .page .border-left {
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1); }
+  box-shadow: 3px 3px 3px #dbd8d1;
+  background-image: url("http://www.psd-dude.com/tutorials/resources-images/old-vintage-paper-textures-for-designers/grunge-paper-background-texture.jpg");
+  background-size: cover; }
   .page .text {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fdfaf5;
+    border-radius: 3px; }
   .page .image {
     text-align: center;
     margin-bottom: 20px; }
     .page .image img {
       width: 100%;
-      max-width: 600px; }
-  .page .choice-buttons {
-    text-align: center; }
-  .page .choice-buttons button {
-    margin: 10px; }
+      max-width: 550px; }
 
 @media (max-width: 700px) {
   .page {

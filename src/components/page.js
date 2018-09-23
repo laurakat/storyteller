@@ -4,6 +4,9 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import theme from '../styles/mui-theme'
+
 class Page extends PureComponent {
   static propTypes = {
     currentPage: PropTypes.object.isRequired,
@@ -25,19 +28,21 @@ class Page extends PureComponent {
         <div className="text">
           {currentPage.text}
         </div>
-        <div className='choice-buttons'>
-          {currentPage.choices && currentPage.choices.map(choice => {
-            return (
-              <Button
-                key={choice.nextPage}
-                variant="contained"
-                color="primary"
-                onClick={() => this._handleChangePage(choice.nextPage)}>
-                {choice.text}
-              </Button>
-            )
-          })}
-        </div>
+        <MuiThemeProvider theme={theme}>
+          <div className='choice-buttons'>
+            {currentPage.choices && currentPage.choices.map(choice => {
+              return (
+                <Button
+                  key={choice.nextPage}
+                  variant="contained"
+                  color="primary"
+                  onClick={() => this._handleChangePage(choice.nextPage)}>
+                  {choice.text}
+                </Button>
+              )
+            })}
+          </div>
+        </MuiThemeProvider>
       </div>
     )
   }
